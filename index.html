@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Savore - Luxury Food Delivery</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --dark:#1E1E1E;
+  --cream:#F8F5F2;
+  --gold:#C6A75E;
+  --gray:#777;
+  --white:#fff;
+  --red:#9C2C2C;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:var(--cream);
+  color:var(--dark);
+}
+
+/* HEADER */
+header{
+  background:var(--dark);
+  color:var(--white);
+  padding:15px 60px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:26px;
+  color:var(--gold);
+}
+
+nav a{
+  color:var(--white);
+  margin-left:20px;
+  text-decoration:none;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:var(--gold);
+}
+
+/* DELIVERY BAR */
+.delivery-bar{
+  background:#2a2a2a;
+  padding:10px 60px;
+  display:flex;
+  gap:15px;
+}
+
+.delivery-bar input{
+  flex:1;
+  padding:10px;
+  border-radius:20px;
+  border:none;
+}
+
+.delivery-bar button{
+  background:var(--gold);
+  color:white;
+  border:none;
+  padding:10px 20px;
+  border-radius:20px;
+  cursor:pointer;
+}
+
+/* PAGE SECTIONS */
+.page{
+  display:none;
+  padding:60px;
+}
+
+.active{
+  display:block;
+}
+
+/* HERO */
+.hero{
+  height:70vh;
+  background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+  url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  text-align:center;
+  border-radius:20px;
+}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:48px;
+}
+
+/* SECTION TITLE */
+.section-title{
+  font-family:'Playfair Display',serif;
+  font-size:32px;
+  margin-bottom:30px;
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:white;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+}
+
+.card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+}
+
+.card-content{
+  padding:20px;
+}
+
+.price{
+  color:var(--gold);
+  margin-top:10px;
+}
+
+/* OFFER BOX */
+.offer-box{
+  background:var(--red);
+  color:white;
+  padding:30px;
+  border-radius:16px;
+  margin-bottom:30px;
+  text-align:center;
+}
+
+/* PROFILE */
+.profile-box{
+  max-width:500px;
+  background:white;
+  padding:30px;
+  border-radius:16px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+}
+
+.profile-box input{
+  width:100%;
+  padding:10px;
+  margin-bottom:15px;
+  border-radius:8px;
+  border:1px solid #ddd;
+}
+
+/* CONTACT */
+.contact input,.contact textarea{
+  width:100%;
+  padding:10px;
+  margin-bottom:15px;
+  border-radius:8px;
+  border:1px solid #ddd;
+}
+
+/* FOOTER */
+footer{
+  background:var(--dark);
+  color:white;
+  text-align:center;
+  padding:20px;
+  margin-top:40px;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Savore</div>
+  <nav>
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('menu')">Menu</a>
+    <a onclick="showPage('offers')">Offers</a>
+    <a onclick="showPage('profile')">Profile</a>
+    <a onclick="showPage('about')">About</a>
+    <a onclick="showPage('contact')">Contact</a>
+  </nav>
+</header>
+
+<div class="delivery-bar">
+  <input type="text" placeholder="Enter Delivery Address...">
+  <button>Deliver Here</button>
+</div>
+
+<!-- HOME -->
+<section id="home" class="page active">
+  <div class="hero">
+    <div>
+      <h1>Luxury Dining Delivered</h1>
+      <p>Experience premium taste at your doorstep</p>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="page">
+  <h2 class="section-title">Our Signature Menu</h2>
+  <div class="cards">
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591">
+      <div class="card-content"><h3>Italian Pizza</h3><p class="price">$18.99</p></div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349">
+      <div class="card-content"><h3>Gourmet Burger</h3><p class="price">$15.99</p></div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c">
+      <div class="card-content"><h3>Fresh Salad</h3><p class="price">$12.99</p></div>
+    </div>
+
+    <div class="card">
+      <img src=data:image/jpeg;base64,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>
+      <div class="card-content"><h3>Grilled Steak</h3><p class="price">$24.99</p></div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600891964599-f61ba0e24092">
+      <div class="card-content"><h3>Chicken Wings</h3><p class="price">$14.99</p></div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1499028344343-cd173ffc68a9">
+      <div class="card-content"><h3>Chocolate Cake</h3><p class="price">$9.99</p></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- OFFERS -->
+<section id="offers" class="page">
+  <div class="offer-box">
+    <h2>🔥 Weekend Special</h2>
+    <p>Get 30% OFF on Italian Dishes - Use Code: SAVORE30</p>
+  </div>
+  <div class="offer-box">
+    <h2>🎉 First Order Offer</h2>
+    <p>Flat $10 OFF on your first order</p>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section id="profile" class="page">
+  <h2 class="section-title">Your Profile</h2>
+  <div class="profile-box">
+    <input type="text" placeholder="Full Name">
+    <input type="email" placeholder="Email Address">
+    <input type="text" placeholder="Phone Number">
+    <input type="text" placeholder="Saved Address">
+    <button style="background:var(--gold);color:white;padding:10px 20px;border:none;border-radius:20px;">Save Profile</button>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="page">
+  <h2 class="section-title">About Savore</h2>
+  <p style="max-width:700px;line-height:1.8;color:var(--gray);">
+    Savore is a premium food delivery platform designed for customers who appreciate elegant presentation and fine taste.
+    We collaborate with top chefs and restaurants to bring luxury dining directly to your home.
+  </p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="page contact">
+  <h2 class="section-title">Contact Us</h2>
+  <input type="text" placeholder="Your Name">
+  <input type="email" placeholder="Your Email">
+  <textarea rows="5" placeholder="Your Message"></textarea>
+  <button style="background:var(--gold);color:white;padding:10px 20px;border:none;border-radius:20px;">Send Message</button>
+</section>
+
+<footer>
+  © 2026 Savore - Premium Food Delivery Experience
+</footer>
+
+<script>
+function showPage(pageId){
+  document.querySelectorAll('.page').forEach(page=>{
+    page.classList.remove('active');
+  });
+  document.getElementById(pageId).classList.add('active');
+}
+</script>
+
+</body>
+</html>
